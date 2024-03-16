@@ -12,3 +12,6 @@ services:
         - ./profiles:/app/profiles
         - ./profiles.json:/app/profiles.json
         - ./local_storage.json:/app/local_storage.json
+      ports:
+        - "3000:3000" 
+        - "8000:8000" 

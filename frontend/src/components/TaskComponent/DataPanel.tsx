@@ -6,11 +6,18 @@ function createColumns(fields) {
     display: label,
   }))
 }
-
+function isValidLink(string) {
+  try {
+    new URL(string);
+    return true;
+  } catch (error) {
+    return false;
+  }
+}
 function isLink(value) {
   return (
     typeof value === 'string' &&
-    (value.startsWith('http://') || value.startsWith('https://'))
+    (value.startsWith('http://') || value.startsWith('https://')) && isValidLink(value)
   )
 }
 

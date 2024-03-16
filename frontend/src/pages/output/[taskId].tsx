@@ -35,7 +35,10 @@ export const getServerSideProps: GetServerSideProps = async ({
   try {
     const id = (params as any).taskId
 
-    const { data } = await Api.getTaskResults(id)
+    const { data } = await Api.getTaskResults(id, {
+      "limit": 25, 
+      "offset": 0,
+    })
 
     return {
       props: { response: data, taskId: id },
