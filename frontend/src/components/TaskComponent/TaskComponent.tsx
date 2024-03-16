@@ -118,13 +118,14 @@ const TaskComponent = ({
   sorts,
   filters,
   views,
+  default_sort,
   response: initialResponse,
   taskId,
 }) => {
   const [response, setResponse] = useState(initialResponse)
   const defaultView = views.length > 0 ? views[0].id : null
 
-  const [sort, setSort] = useState('')
+  const [sort, setSort] = useState(default_sort || '')
   const [pageAndView, setPageAndView] = useState({
     currentPage: 0,
     view: defaultView,

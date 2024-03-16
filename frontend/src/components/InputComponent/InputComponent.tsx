@@ -322,7 +322,14 @@ const ScraperFormContainer = ({ selectedScraper }) => {
       component="form"
       onSubmit={handleSubmit}>
       <NextOnlyFields
-        onReset={() => setData(getDefaultData(controls))}
+        onReset={() => {
+          const dd = getDefaultData(controls)
+          localStorage.setItem(
+            `input_${selectedScraper.scraper_name}_${selectedScraper.input_js_hash}`,
+            JSON.stringify(dd)
+          )
+          setData(dd)
+        }}
         validationResult={validationResult}
         controls={controls}
         data={data}
