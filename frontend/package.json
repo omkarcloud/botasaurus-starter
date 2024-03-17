@@ -18,12 +18,10 @@
   },
   "license": "Apache-2.0",
   "scripts": {
-    "analyze": "ANALYZE=true npm run build",
+    "dev": "next dev",
     "build": "rm -f public/themes/*.min.css && next build --no-lint",
-    "dev": "next",
-    "lint": "tsc && next lint",
-    "start": "next start",
-    "prettier-fix": "rm -f public/themes/*.min.css .next/* && prettier --write '**/*.{ts,tsx,js,jsx}'"
+    "start": "next start"
+
   },
   "repository": {
     "type": "git",
@@ -39,36 +37,18 @@
     "@omkar111111/utils": "^0.2.77",
     "axios": "^0.26.1",
     "botasaurus-controls": "latest",
-    "cogo-toast-react-17-fix": "latest",
-    "core-js": "^3.25.1",
-    "regenerator-runtime": "^0.13.9"
+    "cogo-toast-react-17-fix": "latest"
   },
   "devDependencies": {
-    "@elastic/datemath": "^5.0.3",
-    "@emotion/babel-plugin": "^11.10.2",
-    "@next/bundle-analyzer": "^12.3.1",
-    "@types/node": "^16.11.10",
-    "@typescript-eslint/eslint-plugin": "^5.5.0",
-    "ajv": "^7.2.4",
     "copy-webpack-plugin": "^10.0.0",
-    "eslint": "<8.0.0",
-    "eslint-config-next": "12.0.4",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
     "glob": "^7.2.0",
-    "iniparser": "^1.0.5",
     "moment": "^2.29.4",
     "next": "^12.3.1",
-    "null-loader": "^4.0.1",
-    "prettier": "^2.5.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "sass": "^1.43.5",
-    "serve": "^13.0.2",
-    "typescript": "^4.5.2",
-    "typescript-plugin-css-modules": "^3.4.0"
+    "typescript": "^4.5.2"
   },
-  "resolutions": {
-    "trim": "0.0.3"
-  }
+  "browserslist": [
+    "last 2 chrome versions"
+  ]
 }

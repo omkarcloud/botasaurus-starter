@@ -1,6 +1,5 @@
 import { EuiErrorBoundary } from '@elastic/eui'
 import { Global } from '@emotion/react'
-import 'core-js/stable'
 import NextApp from 'next/app'
 import Head from 'next/head'
 import 'regenerator-runtime/runtime'
