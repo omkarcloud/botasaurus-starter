@@ -39,7 +39,7 @@ const nextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: `${in_kubernetes ? 'http://0.0.0.0:8000' : 'http://127.0.0.1:8000'}/api/:path*`, // Proxy to Backend
+        destination: "http://127.0.0.1:8000/api/:path*", // Proxy to Backend
       },
     ]
   },
