@@ -7,23 +7,18 @@ const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const { IgnorePlugin } = require('webpack')
 
-const in_kubernetes = !!process.env.KUBERNETES_SERVICE_HOST
 /**
  * If you are deploying your site under a directory other than `/` e.g.
  * GitHub pages, then you have to tell Next where the files will be served.
  * We don't need this during local development, because everything is
  * available under `/`.
  */
-const usePathPrefix = process.env.PATH_PREFIX === 'true'
-const pathPrefix = usePathPrefix ? '' : ''
 
 const themeConfig = buildThemeConfig()
 
 const nextConfig = {
   env: {
-    PATH_PREFIX: pathPrefix,
     THEME_CONFIG: JSON.stringify(themeConfig),
-    IN_KUBERNETES:in_kubernetes, 
   },
   typescript: {
     // !! WARN !!
@@ -55,7 +50,7 @@ const nextConfig = {
    * expect all paths to have a specific directory prefix. This fact is
    * transparent to (almost all of) the rest of the application.
    */
-  basePath: pathPrefix,
+  basePath: '',
 
   images: {
     loader: 'custom',

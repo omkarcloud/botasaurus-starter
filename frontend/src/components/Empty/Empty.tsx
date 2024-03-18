@@ -9,6 +9,14 @@ import {
 import Link from 'next/link'
 import CenteredSpinner from '../CenteredSpinner'
 
+
+function OutputLink() {
+  return <Link href={`/output`} passHref>
+    <EuiLink>View All Tasks</EuiLink>
+  </Link>
+}
+
+
 export const EmptyInputs = props => {
   return (
     <div style={{ padding: '80px 0', textAlign: 'center' }}>
@@ -162,7 +170,8 @@ export const EmptyFilterResults = props => {
 
 export const EmptyPending = () => {
   return (
-    <div style={{ padding: '80px 0', textAlign: 'center' }}>
+    <div className='space-y-8' style={{ padding: '80px 0', textAlign: 'center' }}>
+      <OutputLink/>
       <EuiEmptyPrompt
         body={
           <div>
@@ -180,7 +189,8 @@ export const EmptyPending = () => {
 
 export const EmptyInProgress = () => {
   return (
-    <div style={{ padding: '80px 0', textAlign: 'center' }}>
+    <div className='space-y-8' style={{ padding: '80px 0', textAlign: 'center' }}>
+      <OutputLink/>
       <EuiEmptyPrompt
         body={
           <div>
@@ -199,7 +209,8 @@ export const EmptyInProgress = () => {
 
 export const EmptyFailed = ({ error }) => {
   return (
-    <div style={{ padding: '80px 0', textAlign: 'center' }}>
+    <div className='space-y-8' style={{ padding: '80px 0', textAlign: 'center' }}>
+      <OutputLink/>
       <EuiEmptyPrompt
         body={
           <div>
@@ -227,7 +238,8 @@ export const EmptyFailed = ({ error }) => {
 
 export const EmptyAborted = () => {
   return (
-    <div style={{ padding: '80px 0', textAlign: 'center' }}>
+    <div className='space-y-8' style={{ padding: '80px 0', textAlign: 'center' }}>
+      <OutputLink/>
       <EuiEmptyPrompt
         body={
           <div>

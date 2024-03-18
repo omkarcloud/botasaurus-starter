@@ -69,6 +69,7 @@ function convertToBool(isRequired?: boolean | ((data: any) => boolean), data?: a
   }
 }
 const InputFields = ({
+  isSubmitting,
   validationResult,
   controls,
   data,
@@ -230,7 +231,7 @@ const InputFields = ({
         )
       })}
       <div className="mt-6 flex gap-x-8">
-        <EuiButton type="submit" fill onClick={onSubmit}>
+        <EuiButton disabled={isSubmitting} type="submit" fill onClick={onSubmit}>
           Run
         </EuiButton>
         <EuiButtonEmpty onClick={onReset}>Reset to Default</EuiButtonEmpty>
@@ -266,6 +267,7 @@ function getInitialData(scraper_name, input_js_hash, controls) {
 
 const ScraperFormContainer = ({ selectedScraper }) => {
   const [submitAttempted, setSubmitAttempted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const controls = useMemo(
     () => createControls(selectedScraper.input_js),
@@ -300,10 +302,11 @@ const ScraperFormContainer = ({ selectedScraper }) => {
 
       // @ts-ignore
       const cleanedData = controls.getBackendValidationResult(data)['data']
+      setIsSubmitting(true)
       const response = await Api.createTask({
         scraper_name: selectedScraper.scraper_name,
         data: cleanedData,
-      })
+      }).finally(()=>setIsSubmitting(false))
 
       const result = response.data
       const outputId = Array.isArray(result) ? result[0].id : result.id
@@ -335,6 +338,7 @@ const ScraperFormContainer = ({ selectedScraper }) => {
         data={data}
         onDataChange={handleDataChange}
         onSubmit={handleSubmit}
+        isSubmitting={isSubmitting}
         submitAttempted={submitAttempted}
       />
     </EuiForm>
