@@ -38,7 +38,6 @@ const nextConfig = {
       },
     ]
   },
-  swcMinify: true,
   compiler: {
     emotion: true,
   },
