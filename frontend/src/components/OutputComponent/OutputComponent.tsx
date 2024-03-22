@@ -142,7 +142,7 @@ const DurationComponent = ({ task }) => {
   const [duration, setDuration] = useState(calculateDuration(task))
 
   useEffect(() => {
-    const isExecuting = isDoing(task) // Assuming isDoing is a function to check task status
+    const isExecuting = task.status === TaskStatus.IN_PROGRESS
     if (isExecuting) {
       const interval = setInterval(() => {
         setDuration(calculateDuration(task))
