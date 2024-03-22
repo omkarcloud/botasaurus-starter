@@ -2,7 +2,7 @@ import { EuiLink, EuiPagination } from '@elastic/eui'
 import { useEffect, useRef, useState } from 'react'
 import Api from '../../utils/api'
 import { isEmpty, isEmptyObject } from '../../utils/missc'
-import { TaskStatus } from '../../utils/models'
+import { TaskStatus, isDoing } from '../../utils/models'
 import CenteredSpinner from '../CenteredSpinner'
 import DownloadStickyBar from '../DownloadStickyBar/DownloadStickyBar'
 import {
@@ -52,12 +52,6 @@ function titleCase(string) {
     .split(' ')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ')
-}
-
-function isDoing(task) {
-  return (
-    task.status === TaskStatus.IN_PROGRESS || task.status === TaskStatus.PENDING
-  )
 }
 
 function clean_filter_data(filter_data, filters) {
