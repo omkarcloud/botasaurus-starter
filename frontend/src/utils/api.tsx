@@ -34,6 +34,13 @@ function isAnyTaskFinished(task_ids) {
     silenceError:true,
   })
 }
+function isTaskUpdated(taskId, lastUpdated, status) {
+  return AxiosInstance.get(`/tasks/is-task-updated?task_id=${taskId}&last_updated=${encodeURIComponent(lastUpdated)}&status=${status}`, {
+    silent: true,
+    silenceError: true,
+  });
+}
+
 
 function getTask(task_id: number) {
   return AxiosInstance.get(`/tasks/${task_id}`, { silent: true,  })
@@ -87,6 +94,7 @@ function getTaskResults(taskId, data = {}) {
 const Api = {
   isApiRunning,
   isAnyTaskFinished,
+  isTaskUpdated,
   getConfig,
   createTask,
   createTaskAndGetResult,
