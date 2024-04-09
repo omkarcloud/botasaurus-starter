@@ -154,8 +154,8 @@ const TaskComponent = ({
           sort,
           filters: clean_filter_data(filter_data, filters),
           view: pageAndView.view,
-          offset: pageAndView.currentPage * per_page_records,
-          limit: per_page_records,
+          page: pageAndView.currentPage + 1,
+          per_page: per_page_records,
         }
         const { data } = await Api.getTaskResults(taskId, params)
         setResponse(data)
@@ -183,11 +183,11 @@ const TaskComponent = ({
                     sort,
                     filters: clean_filter_data(filter_data, filters),
                     view: pageAndView.view,
-                    offset: pageAndView.currentPage * per_page_records,
-                    limit: per_page_records,
+                    page: pageAndView.currentPage + 1 ,
+                    per_page: per_page_records,
                 };
                 const { data } = await Api.getTaskResults(taskId, params);
-                if ((pageAndView.currentPage + 1) > data.page_count) {
+                if ((pageAndView.currentPage + 1) > data.total_pages) {
                     setPageAndView((x) => ({ ...x, currentPage: 0 }));
                 }
                 setResponse(data);
@@ -219,7 +219,7 @@ const TaskComponent = ({
   }
 
   const hasResults = !!response.count
-  const showPagination = hasResults && response.page_count > 1
+  const showPagination = hasResults && response.total_pages > 1
 
   const isResultsNotArray = !Array.isArray(response.results)
   if (isResultsNotArray) {
@@ -303,7 +303,7 @@ const TaskComponent = ({
                   display: 'flex',
                   justifyContent: 'end',
                 }}
-                pageCount={response.page_count}
+                pageCount={response.total_pages}
                 activePage={pageAndView.currentPage}
                 onPageClick={handlePageClick}
               />

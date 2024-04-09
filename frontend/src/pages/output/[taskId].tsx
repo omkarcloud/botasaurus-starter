@@ -38,8 +38,8 @@ export const getServerSideProps: GetServerSideProps = wrapAxiosErrors(async ({
     const id = (params as any).taskId
 
     const { data } = await Api.getTaskResults(id, {
-      "limit": 25,
-      "offset": 0,
+      "per_page": 25,
+      "page": 1,
     })
 
     return {

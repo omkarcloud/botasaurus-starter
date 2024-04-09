@@ -45,7 +45,7 @@ EuiApp.getInitialProps = async props => {
   } = props
 
   const getResponse = async () => {
-    const res = await fetch(`${baseUrl}/config`)
+    const res = await fetch(`${baseUrl}/ui/config`)
 
     if (!res.ok) {
       throw new Error(`HTTP error! status: ${res.status}`)
