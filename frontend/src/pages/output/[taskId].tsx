@@ -36,6 +36,7 @@ export const getServerSideProps: GetServerSideProps = wrapAxiosErrors(async ({
 }) => {
   try {
     const id = (params as any).taskId
+    const config = await Api.getConfig()
 
     const { data } = await Api.getTaskResults(id, {
       "per_page": 25,
@@ -43,7 +44,7 @@ export const getServerSideProps: GetServerSideProps = wrapAxiosErrors(async ({
     })
 
     return {
-      props: { response: data, taskId: id },
+      props: {...config,  response: data, taskId: id },
     }
   } catch (error) {
     if (error.response && error.response.status === 404) {
