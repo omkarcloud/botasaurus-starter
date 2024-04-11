@@ -7,7 +7,17 @@ export const TaskStatus = {
   ABORTED: 'aborted',
 }
 
+export function hasViews(views: any) {
+  return views.length
+}
 
+export function hasFilters(filters: any) {
+  return filters.length
+}
+
+export function hasSorts(sorts: any) {
+  return sorts.length > 1
+}
 
 function isPending(task: any): boolean {
   return task.status === TaskStatus.PENDING

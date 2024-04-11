@@ -7,12 +7,16 @@ import { create_title } from '../../utils/common'
 import Links from '../../utils/data/links'
 import AxiosErrorHoc, { wrapAxiosErrors } from '../../components/AxiosErrorHoc'
 
+function findScraperConfig(scrapers: any, task: any) {
+  return scrapers.find(
+    scraper => scraper.scraper_name === task.scraper_name
+  )
+}
+
 const Page = ({ taskId, scrapers, ...props }: any) => {
   const response = props.response
   const task = response.task
-  const scraperConfig = scrapers.find(
-    scraper => scraper.scraper_name === task.scraper_name
-  )
+  const scraperConfig = findScraperConfig(scrapers, task)
 
   if (!scraperConfig) {
     return <div>No Scraper Config Found, Did you forgot to add Scraper?</div>
@@ -41,7 +45,8 @@ export const getServerSideProps: GetServerSideProps = wrapAxiosErrors(async ({
     const { data } = await Api.getTaskResults(id, {
       "per_page": 25,
       "page": 1,
-    })
+    }, true)
+
 
     return {
       props: {...config,  response: data, taskId: id },

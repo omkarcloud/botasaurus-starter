@@ -17,7 +17,7 @@ import {
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import Api from '../../utils/api'
-import { TaskStatus, filterAndMapAllTasks,  filterIsPendingTasks, filterIsProgressTasks, isDoing } from '../../utils/models'
+import { TaskStatus, filterAndMapAllTasks,  filterIsPendingTasks, filterIsProgressTasks, } from '../../utils/models'
 import { EmptyOutputs, EmptyScraper } from '../Empty/Empty'
 import Toast from '../../utils/cogo-toast'
 import ClickOutside from '../ClickOutside/ClickOutside'

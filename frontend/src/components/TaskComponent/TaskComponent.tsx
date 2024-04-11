@@ -2,7 +2,7 @@ import { EuiLink, EuiPagination } from '@elastic/eui'
 import { useEffect, useRef, useState } from 'react'
 import Api from '../../utils/api'
 import { isEmpty, isEmptyObject } from '../../utils/missc'
-import { TaskStatus, isDoing } from '../../utils/models'
+import { TaskStatus, hasFilters, isDoing, hasSorts, hasViews } from '../../utils/models'
 import CenteredSpinner from '../CenteredSpinner'
 import DownloadStickyBar from '../DownloadStickyBar/DownloadStickyBar'
 import {
@@ -203,10 +203,11 @@ const TaskComponent = ({
   }, [response.task.updated_at, taskId, response.task.status, sort, filter_data, pageAndView.view, pageAndView.currentPage])
 
   let selectedFields =
-    pageAndView.view === '__all_fields__'
+    !pageAndView.view
       ? determineFields(response.results)
       : views.find(v => v.id === pageAndView.view)?.fields ?? null
-  if (selectedFields) {
+  
+      if (selectedFields) {
     selectedFields = caseFields(selectedFields)
   }
 
@@ -269,7 +270,7 @@ const TaskComponent = ({
         <Link href={`/output`} passHref>
               <EuiLink>View All Tasks</EuiLink>
             </Link>
-          {filters.length ? (
+          {hasFilters(filters) ? (
             <FilterComponent
               filter_data={filter_data}
               setFilter={setFilter}
@@ -277,18 +278,18 @@ const TaskComponent = ({
             />
           ):null}
 
-          {sorts.length ? (
-            <SortComponent sort={sort} setSort={setSort} sorts={sorts} />
+          {hasSorts(sorts) ? (
+            <div><SortComponent sort={sort} setSort={setSort} sorts={sorts} /></div>
           ) : null}
         </div>
 
-        <div className="pb-6 pt-2">
+        {hasViews(views) ? <div className="pb-6 pt-2">
           <ViewComponent
             view={pageAndView.view}
             setView={handleViewSet}
             views={views}
           />
-        </div>
+        </div> :  <div className=' pt-4'/>}
       </OutputTabsContainer>
       <OutputContainerWithBottomPadding>
         {loading ? (
