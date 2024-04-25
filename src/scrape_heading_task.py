@@ -1,10 +1,11 @@
-from botasaurus import *
+from botasaurus.request import request, Request
+from botasaurus.make_soup import make_soup
 
 @request
-def scrape_heading_task(request: AntiDetectRequests, data):
+def scrape_heading_task(request: Request, data):
     link = data["link"]
     # Navigate to the Omkar Cloud website
-    soup = request.bs4(link)
+    soup = make_soup(link)
     
     # Retrieve the heading element's text
     heading = soup.find('h1').get_text()
