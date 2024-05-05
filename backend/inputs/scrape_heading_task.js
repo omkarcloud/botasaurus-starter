@@ -7,5 +7,6 @@
  */
 function getInput(controls) {
     controls
-        .link('link', { isRequired: true ,defaultValue:"https://www.omkar.cloud/"})
+        // Render a Link Input
+        .link('link', { isRequired: true, defaultValue: "https://www.omkar.cloud/" })
 }

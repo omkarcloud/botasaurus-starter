@@ -42,7 +42,7 @@ git clone https://github.com/omkarcloud/botasaurus-starter my-botasaurus-project
 cd my-botasaurus-project
 ```
 
-2. Install dependencies
+2. Install the dependencies. It's worth mentioning that the installation will take a few minutes.
 ```
 python -m pip install -r requirements.txt && python run.py install
 ```
