@@ -32,8 +32,6 @@
   </a>
 </p>
 
----
-
 
 To run locally, do the usual:
 1. Clone Starter Template
