@@ -1,2 +1,3 @@
 botasaurus
 botasaurus_server
+cchardet

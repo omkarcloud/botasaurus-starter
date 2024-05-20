@@ -8,6 +8,8 @@ services:
       context: .
     volumes:
       - .:/app
+    environment:
+      - KUBERNETES_SERVICE_HOST=True
     ports:
       - "3000:3000"
       - "8000:8000"
