@@ -1,2 +1,2 @@
 botasaurus
-botasaurus_server
+botasaurus-server
