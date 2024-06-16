@@ -14,7 +14,7 @@ import { useRouter } from 'next/router'
 import Api from '../../utils/api'
 import { isEmptyObject } from '../../utils/missc'
 import { pushToRoute } from '../../utils/next'
-import { EmptyInputs, EmptyScraper } from '../Empty/Empty'
+import { EmptyFailedInputJs, EmptyInputs, EmptyScraper } from '../Empty/Empty'
 import ScraperSelector from '../ScraperSelector/ScraperSelector'
 import CheckboxField from '../inputs/CheckBoxField'
 import ChooseField from '../inputs/ChooseField'
@@ -298,11 +298,18 @@ function getInitialData(scraper_name, input_js_hash, controls) {
 const ScraperFormContainer = ({ selectedScraper }) => {
   const [submitAttempted, setSubmitAttempted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const controls = useMemo(
-    () => createControls(selectedScraper.input_js),
-    [selectedScraper]
-  )
+  let controls
+  try {
+    controls = useMemo(
+      () => {
+        return createControls(selectedScraper.input_js)
+      },
+      [selectedScraper]
+    )
+  } catch (error) {
+    return <EmptyFailedInputJs error={error.stack} />
+  }
+  
   const [data, setData] = useState(() =>
     getInitialData(
       selectedScraper.scraper_name,
