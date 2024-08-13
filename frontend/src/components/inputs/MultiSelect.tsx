@@ -8,7 +8,8 @@ export default function MultiSelect({
 }: any) {
   const selected = value
   // cleanedOptions.filter(x => value.includes(x.value))
-
+  console.log({selected})
+  debugger
   return (
     <EuiComboBox
       {...props}

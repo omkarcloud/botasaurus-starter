@@ -237,7 +237,6 @@ export const EmptyFailed = ({ error }) => {
     </div>
   )
 }
-
 export const EmptyFailedInputJs = ({ error , }) => {
   return (
     <div className='space-y-8' style={{ padding: "20px 0", textAlign: 'center' }}>
@@ -261,12 +260,13 @@ export const EmptyFailedInputJs = ({ error , }) => {
         }
         color="subdued"
         layout="vertical"
-        title={<h2>Incorrect input_js file</h2>}
+        // title={<h2>Incorrect input_js file</h2>}
         titleSize="m"
       />
     </div>
   )
 }
+
 
 export const EmptyAborted = () => {
   return (

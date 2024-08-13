@@ -14,7 +14,7 @@ import { useRouter } from 'next/router'
 import Api from '../../utils/api'
 import { isEmptyObject } from '../../utils/missc'
 import { pushToRoute } from '../../utils/next'
-import { EmptyInputs, EmptyScraper } from '../Empty/Empty'
+import { EmptyFailedInputJs, EmptyInputs, EmptyScraper } from '../Empty/Empty'
 import ScraperSelector from '../ScraperSelector/ScraperSelector'
 import CheckboxField from '../inputs/CheckBoxField'
 import ChooseField from '../inputs/ChooseField'
@@ -26,6 +26,7 @@ import SwitchField from '../inputs/SwitchField'
 import TextAreaField from '../inputs/TextAreaField'
 import TextField from '../inputs/TextField'
 import ClientOnly from '../ClientOnly'
+import { Container } from '../Wrappers'
 
 function mapControlsToElements(
   controls: Control<any, WithChooseOptions>[],
@@ -355,7 +356,18 @@ const ScraperFormContainer = ({ scrapers }) => {
   }
   const router = useRouter()
   // @ts-ignore
-  const validationResult = controls.validate(data)
+  let validationResult
+  try {
+    // @ts-ignore
+    validationResult = controls.validate(data)
+  } catch (error) {
+    const fullError = error.stack || error.toString()
+      return <Container>
+      <EmptyFailedInputJs error={fullError} />
+      </Container>
+
+    // <div>{}</div>   
+  }
 
   const [accords, setaccords] = useState(() => {
     const rs = {}
