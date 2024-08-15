@@ -27,6 +27,7 @@ import TextAreaField from '../inputs/TextAreaField'
 import TextField from '../inputs/TextField'
 import ClientOnly from '../ClientOnly'
 import { Container } from '../Wrappers'
+import InputMultiSelect from '../inputs/InputMultiSelect'
 
 function mapControlsToElements(
   controls: Control<any, WithChooseOptions>[],
@@ -190,19 +191,32 @@ const InputFields = ({
               />
             )
             break
-          case 'select':
-            inputElement = (
-              <SingleSelect
-                title={disabledMsg}
-                isDisabled={disabled}
-                style={{ maxWidth: '400px' }}
-                name={id}
-                options={options}
-                value={data[id]}
-                onChange={value => handleInputChange(id, value)}
-              />
-            )
-            break
+            case 'select':
+              inputElement = (
+                <SingleSelect
+                  title={disabledMsg}
+                  isDisabled={disabled}
+                  style={{ maxWidth: '400px' }}
+                  name={id}
+                  options={options}
+                  value={data[id]}
+                  onChange={value => handleInputChange(id, value)}
+                />
+              )
+              break
+              case 'multiSelect':
+                inputElement = (
+                  <InputMultiSelect
+                    title={disabledMsg}
+                    isDisabled={disabled}
+                    style={{ maxWidth: '400px' }}
+                    name={id}
+                    options={options}
+                    value={data[id]}
+                    onChange={value => handleInputChange(id, value)}
+                  />
+                )
+                break              
           case 'listOfTexts':
             inputElement = (
               <ListOfTextFields
