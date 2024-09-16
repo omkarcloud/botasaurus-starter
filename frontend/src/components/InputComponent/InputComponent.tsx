@@ -29,6 +29,18 @@ import ClientOnly from '../ClientOnly'
 import { Container } from '../Wrappers'
 import InputMultiSelect from '../inputs/InputMultiSelect'
 
+function saveDataToLocalStorage(selectedScraper: any, newData: any) {
+  try {
+    localStorage.setItem(
+      `input_${selectedScraper.scraper_name}_${selectedScraper.input_js_hash}`,
+      JSON.stringify(newData)
+    );
+  } catch (error) {
+    console.error('Error saving to localStorage:', error);
+  }
+}
+
+
 function mapControlsToElements(
   controls: Control<any, WithChooseOptions>[],
   callback: (control: Control<any, WithChooseOptions>) => any, accords, onToggle
@@ -361,10 +373,7 @@ const ScraperFormContainer = ({ scrapers }) => {
   const handleDataChange = (id, value) => {
     setData(prevData => {
       const newData = { ...prevData.data, [id]: value }
-      localStorage.setItem(
-        `input_${selectedScraper.scraper_name}_${selectedScraper.input_js_hash}`,
-        JSON.stringify(newData)
-      )
+      saveDataToLocalStorage(selectedScraper, newData)
       return {...prevData, data:newData} 
     })
   }
