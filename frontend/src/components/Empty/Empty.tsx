@@ -6,8 +6,8 @@ import {
   EuiImage,
   EuiLink,
 } from '@elastic/eui'
-import Link from 'next/link'
 import CenteredSpinner from '../CenteredSpinner'
+import {Link} from '../Link'
 
 
 function OutputLink() {

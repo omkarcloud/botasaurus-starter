@@ -1,11 +1,9 @@
-import { GetServerSideProps } from 'next/types'
 import Seo from '../../components/Seo'
 import TaskComponent from '../../components/TaskComponent/TaskComponent'
 import AuthedDashboard from '../../components/AuthedDashboard'
-import Api from '../../utils/api'
 import { create_title } from '../../utils/common'
-import Links from '../../utils/data/links'
-import AxiosErrorHoc, { wrapAxiosErrors } from '../../components/AxiosErrorHoc'
+import AxiosErrorHoc from '../../components/AxiosErrorHoc'
+import { outputTaskServerSideProps } from '../../utils/props'
 
 function findScraperConfig(scrapers: any, task: any) {
   return scrapers.find(
@@ -33,33 +31,5 @@ const Page = ({ taskId, scrapers, ...props }: any) => {
 }
 
 
-export const getServerSideProps: GetServerSideProps = wrapAxiosErrors(async ({
-  params,
-  res,
-  req,
-}) => {
-  try {
-    const id = (params as any).taskId
-    const config = await Api.getApiConfig()
-
-    const { data } = await Api.getUiTaskResults(id, {
-      "per_page": 25,
-      "page": 1,
-    }, true)
-
-
-    return {
-      props: {...config,  response: data, taskId: id },
-    }
-  } catch (error) {
-    if (error.response && error.response.status === 404) {
-      return {
-        redirect: { destination: Links.notFound, permanent: false },
-      }
-    } 
-    else {
-      throw error
-    }
-  }
-})
+export const getServerSideProps = outputTaskServerSideProps
 export default AxiosErrorHoc(Page)

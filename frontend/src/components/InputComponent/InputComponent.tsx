@@ -10,7 +10,6 @@ import { EuiForm } from '@elastic/eui'
 import Toast from '../../utils/cogo-toast'
 import { Control, WithChooseOptions, createControls } from 'botasaurus-controls'
 import { useMemo, useState } from 'react'
-import { useRouter } from 'next/router'
 import Api from '../../utils/api'
 import { isEmptyObject } from '../../utils/missc'
 import { pushToRoute } from '../../utils/next'
@@ -28,6 +27,7 @@ import TextField from '../inputs/TextField'
 import ClientOnly from '../ClientOnly'
 import { Container } from '../Wrappers'
 import InputMultiSelect from '../inputs/InputMultiSelect'
+import { useRouter } from '../Link'
 
 function saveDataToLocalStorage(selectedScraper: any, newData: any) {
   try {

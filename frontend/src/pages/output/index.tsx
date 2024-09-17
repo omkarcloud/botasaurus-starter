@@ -1,9 +1,8 @@
-import { GetServerSideProps } from 'next/types'
 import OutputComponent from '../../components/OutputComponent/OutputComponent'
 import Seo from '../../components/Seo'
 import AuthedDashboard from '../../components/AuthedDashboard'
-import Api from '../../utils/api'
 import AxiosErrorHoc, { wrapAxiosErrors } from '../../components/AxiosErrorHoc'
+import { outputServerSideProps } from '../../utils/props'
 
 const Page = ({ tasks, ...props }: any) => {
   return (
@@ -17,12 +16,5 @@ const Page = ({ tasks, ...props }: any) => {
     </>
   )
 }
-export const getServerSideProps: GetServerSideProps = wrapAxiosErrors(async ({}) => {
-  const [tasks, config] = await Promise.all([Api.getTasksForUiDisplay(), Api.getApiConfig()]);
-
-  return {
-    props: { ...config, tasks: tasks.data },
-  }
-
-})
+export const getServerSideProps= outputServerSideProps
 export default AxiosErrorHoc(Page)

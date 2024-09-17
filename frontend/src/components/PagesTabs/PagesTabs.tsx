@@ -1,7 +1,7 @@
-import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { pushToRoute } from '../../utils/next'
 import Tabs from '../Tabs/Tabs'
+import { useRouter } from '../Link'
 
 export const TabsId = {
   INPUT: 'input',

@@ -13,7 +13,6 @@ import {
   EuiText,
   formatDate,
 } from '@elastic/eui'
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import Api from '../../utils/api'
 import { TaskStatus, filterAndMapAllTasks, filterIsPendingTasks, filterIsProgressTasks, } from '../../utils/models'
@@ -31,6 +30,7 @@ import {
 } from '../../components/Wrappers'
 import ServerStatusComponent from '../../components/ServerStatusComponent'
 import { Pagination } from '../Pagination'
+import {Link} from '../Link'
 
 function convertLocalDateToUTCDate(date, toUTC) {
   // auto converts so no need

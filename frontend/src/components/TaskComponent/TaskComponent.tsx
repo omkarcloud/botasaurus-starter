@@ -22,8 +22,8 @@ import DataPanel from './DataPanel'
 import { FilterComponent } from './FilterComponent'
 import { SortComponent } from './SortComponent'
 import { ViewComponent } from './ViewComponent'
-import Link from 'next/link'
 import { Pagination } from '../Pagination'
+import {Link} from '../Link'
 
 function sentenceCase(string) {
   // Convert a string into Sentence case.
