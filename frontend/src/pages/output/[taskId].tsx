@@ -1,7 +1,7 @@
 import { GetServerSideProps } from 'next/types'
 import Seo from '../../components/Seo'
 import TaskComponent from '../../components/TaskComponent/TaskComponent'
-import AuthedDashboard from '../../layouts/AuthedDashboard'
+import AuthedDashboard from '../../components/AuthedDashboard'
 import Api from '../../utils/api'
 import { create_title } from '../../utils/common'
 import Links from '../../utils/data/links'

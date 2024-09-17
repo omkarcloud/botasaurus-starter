@@ -1,17 +1,9 @@
 import { GetServerSideProps } from 'next/types'
-import Description from '../../components/Description/Description'
 import OutputComponent from '../../components/OutputComponent/OutputComponent'
-import Tabs, { TabsId } from '../../components/PagesTabs/PagesTabs'
 import Seo from '../../components/Seo'
-import {
-  OutputContainer,
-  OutputTabsContainer,
-  TabWrapper,
-} from '../../components/Wrappers'
-import AuthedDashboard from '../../layouts/AuthedDashboard'
+import AuthedDashboard from '../../components/AuthedDashboard'
 import Api from '../../utils/api'
 import AxiosErrorHoc, { wrapAxiosErrors } from '../../components/AxiosErrorHoc'
-import ServerStatusComponent from '../../components/ServerStatusComponent'
 
 const Page = ({ tasks, ...props }: any) => {
   return (

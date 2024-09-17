@@ -531,5 +531,13 @@ export const globalStyles = css`
   .OutputContainerWithBottomPadding   .euiDataGrid.euiDataGrid--bordersAll  {
       min-height: 50vh;
   }
+  .logo {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .title-lh {
+    line-height: 1.75; 
+  }    
   `
 

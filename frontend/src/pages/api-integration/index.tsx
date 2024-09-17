@@ -5,7 +5,7 @@ import Description from '../../components/Description/Description'
 import Tabs, { TabsId } from '../../components/PagesTabs/PagesTabs'
 import Seo from '../../components/Seo'
 import { Container, TabWrapper } from '../../components/Wrappers'
-import AuthedDashboard from '../../layouts/AuthedDashboard'
+import AuthedDashboard from '../../components/AuthedDashboard'
 import Api from '../../utils/api'
 import { create_title } from '../../utils/common'
 

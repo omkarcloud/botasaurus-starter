@@ -35,15 +35,6 @@ import { Pagination } from '../Pagination'
 function convertLocalDateToUTCDate(date, toUTC) {
   // auto converts so no need
   return new Date(date+"Z")
-  const localOffset = date.getTimezoneOffset() * 60000
-  const localTime = date.getTime()
-  if (toUTC) {
-    date = localTime + localOffset
-  } else {
-    date = localTime - localOffset
-  }
-  date = new Date(date)
-  return date
 }
 
 const toTitleCase = str => {
