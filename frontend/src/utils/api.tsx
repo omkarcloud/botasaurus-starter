@@ -1,7 +1,6 @@
 import AxiosInstance, {baseUrl} from './axios'
 
-
-async function getConfig() {
+async function getApiConfig() {
   const res = await fetch(`${baseUrl}/ui/config`)
 
   if (!res.ok) {
@@ -12,30 +11,25 @@ async function getConfig() {
   return data
 }
 
-
-function createTask(data: any) {
+function createAsyncTask(data: any) {
   return AxiosInstance.post('/tasks/create-task-async', data, {
     message: 'Starting Task',
   })
 }
 
-function createTaskAndGetResult(data: any) {
-  return AxiosInstance.post('/tasks/create-task-sync', data, { silent: true })
-}
 
-
-function isApiRunning() {
+function getApi() {
   return AxiosInstance.get(null, { silent: true, silenceError:true  })
 }
 
-function getTasks(page=1) {
+function getTasksForUiDisplay(page=1) {
   return AxiosInstance.get(`/ui/tasks?page=${page}`, {
     silent: true,
     silenceError:true,
   })
 }
 
-function isAnyTaskFinished(pending_task_ids, progress_task_ids,  all_tasks) {
+function isAnyTaskUpdated(pending_task_ids, progress_task_ids,  all_tasks) {
   return AxiosInstance.post(`/ui/tasks/is-any-task-updated`, {
     pending_task_ids,
     progress_task_ids,
@@ -99,22 +93,21 @@ function downloadTaskResults(taskId, data = {}) {
   }).then(downloadViaLink)  
 }
 
-function getTaskResults(taskId, data = {}, force_apply_first_view = false, signal=undefined) {
+function getUiTaskResults(taskId, data = {}, force_apply_first_view = false, signal=undefined) {
   return AxiosInstance.post( force_apply_first_view ?`/ui/tasks/${taskId}/results?force_apply_first_view=${force_apply_first_view}` :`/ui/tasks/${taskId}/results` , data, { silent: true , silenceError:true, signal:signal})
 }
 
 const Api = {
-  getConfig, 
-  isApiRunning,
-  isAnyTaskFinished,
+  getApiConfig, 
+  getApi,
+  isAnyTaskUpdated,
   isTaskUpdated,
-  createTask,
-  createTaskAndGetResult,
-  getTasks,
+  createAsyncTask,
+  getTasksForUiDisplay,
   deleteTask,
   abortTask,
   downloadTaskResults,
-  getTaskResults,
+  getUiTaskResults,
 }
 
 export default Api

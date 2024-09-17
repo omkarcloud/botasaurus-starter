@@ -40,9 +40,9 @@ export const getServerSideProps: GetServerSideProps = wrapAxiosErrors(async ({
 }) => {
   try {
     const id = (params as any).taskId
-    const config = await Api.getConfig()
+    const config = await Api.getApiConfig()
 
-    const { data } = await Api.getTaskResults(id, {
+    const { data } = await Api.getUiTaskResults(id, {
       "per_page": 25,
       "page": 1,
     }, true)

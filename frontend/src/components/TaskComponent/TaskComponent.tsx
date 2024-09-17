@@ -180,7 +180,7 @@ const TaskComponent = ({
           page: pageAndView.currentPage + 1,
           per_page: per_page_records,
         };
-        const { data } = await Api.getTaskResults(taskId, params, false, signal);
+        const { data } = await Api.getUiTaskResults(taskId, params, false, signal);
         setResponse(data);
       } catch (error) {
         if (error.message === 'canceled'){
@@ -217,7 +217,7 @@ const TaskComponent = ({
               page: pageAndView.currentPage + 1,
               per_page: per_page_records,
             }
-            const { data } = await Api.getTaskResults(taskId, params)
+            const { data } = await Api.getUiTaskResults(taskId, params)
             if ((pageAndView.currentPage + 1) > data.total_pages) {
               setPageAndView((x) => ({ ...x, currentPage: 0 }))
             }

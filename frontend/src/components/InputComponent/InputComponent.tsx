@@ -414,7 +414,7 @@ const ScraperFormContainer = ({ scrapers }) => {
       // @ts-ignore
       const cleanedData = controls.getBackendValidationResult(data)['data']
       setIsSubmitting(true)
-      const response = await Api.createTask({
+      const response = await Api.createAsyncTask({
         scraper_name: selectedScraper.scraper_name,
         data: cleanedData,
       }).finally(() => setIsSubmitting(false))

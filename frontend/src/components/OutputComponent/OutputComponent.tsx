@@ -336,9 +336,9 @@ const OutputComponent = (props) => {
       const intervalId = setInterval(async () => {
         if (!isCleared.isCleared) { // Access the isCleared property
           const all_tasks = filterAndMapAllTasks(pendingTsks.concat(progressTsks))
-          const response = await Api.isAnyTaskFinished(pendingTsks.map(task => task.id), progressTsks.map(task => task.id), all_tasks)
+          const response = await Api.isAnyTaskUpdated(pendingTsks.map(task => task.id), progressTsks.map(task => task.id), all_tasks)
           if (response.data.result && !isCleared.isCleared) {
-            const { data } = await Api.getTasks(active_page)
+            const { data } = await Api.getTasksForUiDisplay(active_page)
             if (!isCleared.isCleared) { // Access the isCleared property
               setState((x) => ({ ...data, active_page: x.active_page > data.total_pages ? 1 : x.active_page }))
             }
@@ -365,7 +365,7 @@ const OutputComponent = (props) => {
   const onPageChange = x => {
     async function fetchData() {
       setLoading(true)
-      const data = (await Api.getTasks(x)).data
+      const data = (await Api.getTasksForUiDisplay(x)).data
       updateState(data, x)
       setLoading(false)
 

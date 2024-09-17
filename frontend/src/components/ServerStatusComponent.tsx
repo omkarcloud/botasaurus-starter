@@ -12,7 +12,7 @@ const ServerStatusComponent = () => {
     useEffect(() => {
         const checkApiStatus = async () => {
             try {
-                const response = await Api.isApiRunning() // Assuming Api.isApiRunning() returns a promise
+                const response = await Api.getApi() // Assuming Api.getApi() returns a promise
                 if (response.status !== 200) {
                     setIsDown(true)
                 } else {

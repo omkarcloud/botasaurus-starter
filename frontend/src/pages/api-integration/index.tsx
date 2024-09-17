@@ -27,7 +27,7 @@ const Page = ({ ...props }: any) => {
 }
 
 export const getServerSideProps: GetServerSideProps = wrapAxiosErrors(async ({}) => {
-  const config = await Api.getConfig()
+  const config = await Api.getApiConfig()
   return {
     props: config,
   }

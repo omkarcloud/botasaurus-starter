@@ -26,7 +26,7 @@ const Page = ({ tasks, ...props }: any) => {
   )
 }
 export const getServerSideProps: GetServerSideProps = wrapAxiosErrors(async ({}) => {
-  const [tasks, config] = await Promise.all([Api.getTasks(), Api.getConfig()]);
+  const [tasks, config] = await Promise.all([Api.getTasksForUiDisplay(), Api.getApiConfig()]);
 
   return {
     props: { ...config, tasks: tasks.data },
