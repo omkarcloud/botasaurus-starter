@@ -32,10 +32,6 @@ export function isDoing(task) {
   )
 }
 
-export function filterIsDoingTasks(tasks: any[]) {
-  return tasks.filter(isDoing)
-}
-
 
 export function filterIsPendingTasks(tasks: any[]) {
   return tasks.filter(isPending)

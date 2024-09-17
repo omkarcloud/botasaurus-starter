@@ -29,21 +29,6 @@ export const OutputTabsContainer = ({ children }) => {
   )
 }
 
-export const OutputTabsContainerWithBottomPadding = ({ children }) => {
-  return (
-    <div
-      className=""
-      style={{
-        paddingLeft: '16px',
-        paddingRight: '16px',
-        paddingBottom: '32px',
-        margin: '0 auto',
-        maxWidth: '800px',
-      }}>
-      {children}
-    </div>
-  )
-}
 
 export const OutputContainer = ({ children }) => {
   return (
@@ -53,21 +38,6 @@ export const OutputContainer = ({ children }) => {
         paddingLeft: '16px',
         paddingRight: '16px',
         paddingBottom: '32px',
-        margin: '0 auto',
-        maxWidth: '1200px',
-      }}>
-      {children}
-    </div>
-  )
-}
-
-export const OutputContainerWithoutBottomPadding = ({ children }) => {
-  return (
-    <div
-      className=""
-      style={{
-        paddingLeft: '16px',
-        paddingRight: '16px',
         margin: '0 auto',
         maxWidth: '1200px',
       }}>

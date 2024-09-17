@@ -9,29 +9,34 @@ import AuthedDashboard from '../layouts/AuthedDashboard'
 import Api from '../utils/api'
 import { create_title } from '../utils/common'
 
-// Create a Container Component adds padding
 
+function PageContent(props: any) {
+  return <AuthedDashboard {...props}>
+    <Container>
+      <Description {...props} />
+      <Tabs initialSelectedTab={TabsId.INPUT} />
+      <TabWrapper>
+        <InputComponent {...props} />
+      </TabWrapper>
+    </Container>
+  </AuthedDashboard>
+}
+
+// Create a Container Component adds padding
 const Page = ({ ...props }: any) => {
   return (
     <>
       <Seo {...props} title={create_title(props, 'Home')} />
-      <AuthedDashboard {...props}>
-        <Container>
-          <Description {...props} />
-          <Tabs initialSelectedTab={TabsId.INPUT} />
-          <TabWrapper>
-            <InputComponent {...props} />
-          </TabWrapper>
-        </Container>
-      </AuthedDashboard>
+      {PageContent(props)}
     </>
   )
 }
 export const getServerSideProps: GetServerSideProps = wrapAxiosErrors(async ({}) => {
-  const config = await Api.getConfig()
+  const config = await Api.getApiConfig()
   return {
     props: config,
   }
 })
 
 export default Page
+
