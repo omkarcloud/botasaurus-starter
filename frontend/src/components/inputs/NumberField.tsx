@@ -1,6 +1,7 @@
-import Browser from '../../utils/browser'
-import { EuiFieldNumber } from '@elastic/eui'
-import { readNumber } from '../../utils/missc'
+import { EuiFieldNumber } from '@elastic/eui';
+
+import Browser from '../../utils/browser';
+import { readNumber } from '../../utils/missc';
 
 
 export default function NumberField({ value, onChange, ...props }: any) {

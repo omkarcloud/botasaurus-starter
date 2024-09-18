@@ -10,10 +10,11 @@ import {
   EuiModalFooter,
   EuiModalHeader,
   EuiModalHeaderTitle,
-} from '@elastic/eui'
-import { useState } from 'react'
-import ClickOutside from '../ClickOutside/ClickOutside'
-import TextAreaField from './TextAreaField'
+} from '@elastic/eui';
+import { useState } from 'react';
+
+import ClickOutside from '../ClickOutside/ClickOutside';
+import TextAreaField from './TextAreaField';
 
 function isEmpty(x: any) {
   return (

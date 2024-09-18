@@ -1,4 +1,4 @@
-import Tabs from '../Tabs/Tabs'
+import Tabs from '../Tabs/Tabs';
 
 export const ViewComponent = ({ view, setView, views }) => {
   // Convert sorts to the format expected by TabsComponent

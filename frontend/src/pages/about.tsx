@@ -1,11 +1,11 @@
-import AboutComponent from '../components/AboutComponent/AboutComponent'
-import Description from '../components/Description/Description'
-import Tabs, { TabsId } from '../components/PagesTabs/PagesTabs'
-import Seo from '../components/Seo'
-import { Container, TabWrapper } from '../components/Wrappers'
-import AuthedDashboard from '../components/AuthedDashboard'
-import { create_title } from '../utils/common'
-import { homeServerSideProps } from '../utils/props'
+import AboutComponent from '../components/AboutComponent/AboutComponent';
+import AuthedDashboard from '../components/AuthedDashboard';
+import Description from '../components/Description/Description';
+import Tabs, { TabsId } from '../components/PagesTabs/PagesTabs';
+import Seo from '../components/Seo';
+import { Container, TabWrapper } from '../components/Wrappers';
+import { create_title } from '../utils/common';
+import { homeServerSideProps } from '../utils/props';
 
 const Page = ({ ...props }: any) => {
   const markdownContent = props.readme

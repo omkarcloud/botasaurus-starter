@@ -1,4 +1,4 @@
-import { EuiComboBox } from '@elastic/eui'
+import { EuiComboBox } from '@elastic/eui';
 
 export default function MultiSelect({
   options,

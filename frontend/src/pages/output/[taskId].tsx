@@ -1,9 +1,9 @@
-import Seo from '../../components/Seo'
-import TaskComponent from '../../components/TaskComponent/TaskComponent'
-import AuthedDashboard from '../../components/AuthedDashboard'
-import { create_title } from '../../utils/common'
-import AxiosErrorHoc from '../../components/AxiosErrorHoc'
-import { outputTaskServerSideProps } from '../../utils/props'
+import AuthedDashboard from '../../components/AuthedDashboard';
+import AxiosErrorHoc from '../../components/AxiosErrorHoc';
+import Seo from '../../components/Seo';
+import TaskComponent from '../../components/TaskComponent/TaskComponent';
+import { create_title } from '../../utils/common';
+import { outputTaskServerSideProps } from '../../utils/props';
 
 function findScraperConfig(scrapers: any, task: any) {
   return scrapers.find(

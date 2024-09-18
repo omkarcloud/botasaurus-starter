@@ -12,25 +12,22 @@ import {
   EuiModalHeaderTitle,
   EuiText,
   formatDate,
-} from '@elastic/eui'
-import { useEffect, useState } from 'react'
-import Api from '../../utils/api'
-import { TaskStatus, filterAndMapAllTasks, filterIsPendingTasks, filterIsProgressTasks, } from '../../utils/models'
-import { EmptyOutputs, EmptyScraper } from '../Empty/Empty'
-import Toast from '../../utils/cogo-toast'
-import ClickOutside from '../ClickOutside/ClickOutside'
-import { isEmpty } from '../../utils/missc'
-import CenteredSpinner from '../CenteredSpinner'
-import Description from '../../components/Description/Description'
-import Tabs, { TabsId } from '../../components/PagesTabs/PagesTabs'
-import {
-  OutputContainer,
-  OutputTabsContainer,
-  TabWrapper,
-} from '../../components/Wrappers'
-import ServerStatusComponent from '../../components/ServerStatusComponent'
-import { Pagination } from '../Pagination'
-import {Link} from '../Link'
+} from '@elastic/eui';
+import { useEffect, useState } from 'react';
+
+import Description from '../../components/Description/Description';
+import Tabs, { TabsId } from '../../components/PagesTabs/PagesTabs';
+import ServerStatusComponent from '../../components/ServerStatusComponent';
+import { OutputContainer, OutputTabsContainer, TabWrapper } from '../../components/Wrappers';
+import Api from '../../utils/api';
+import Toast from '../../utils/cogo-toast';
+import { isEmpty } from '../../utils/missc';
+import { filterAndMapAllTasks, filterIsPendingTasks, filterIsProgressTasks, TaskStatus } from '../../utils/models';
+import CenteredSpinner from '../CenteredSpinner';
+import ClickOutside from '../ClickOutside/ClickOutside';
+import { EmptyOutputs, EmptyScraper } from '../Empty/Empty';
+import { Link } from '../Link';
+import { Pagination } from '../Pagination';
 
 function convertLocalDateToUTCDate(date, toUTC) {
   // auto converts so no need

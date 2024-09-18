@@ -1,10 +1,12 @@
-import 'regenerator-runtime/runtime'
-import { EuiErrorBoundary } from '@elastic/eui'
-import { Global } from '@emotion/react'
-import Head from 'next/head'
-import Chrome from '../components/chrome'
-import { Theme } from '../components/theme'
-import { globalStyles } from '../styles/global.styles'
+import 'regenerator-runtime/runtime';
+
+import { EuiErrorBoundary } from '@elastic/eui';
+import { Global } from '@emotion/react';
+import Head from 'next/head';
+
+import Chrome from '../components/chrome';
+import { Theme } from '../components/theme';
+import { globalStyles } from '../styles/global.styles';
 
 /**
  * Next.js uses the App component to initialize pages. You can override it

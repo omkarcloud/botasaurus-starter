@@ -1,4 +1,4 @@
-import { EuiLoadingSpinner } from '@elastic/eui'
+import { EuiLoadingSpinner } from '@elastic/eui';
 
 export default function CenteredSpinner({ addMargin = false }) {
   return (

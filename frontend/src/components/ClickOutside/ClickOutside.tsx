@@ -1,5 +1,6 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 export const UnreachableError = new Error('REACHED AN UNREACHABLE STATEMENT')
 
 export function closest(

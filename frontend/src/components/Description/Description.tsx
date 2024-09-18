@@ -1,4 +1,4 @@
-import { EuiText } from '@elastic/eui'
+import { EuiText } from '@elastic/eui';
 
 const Description = ({ description }) => {
   return (

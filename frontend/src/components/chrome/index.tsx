@@ -29,6 +29,7 @@ const Chrome = ({ children }: any) => {
 
   return (
     <EuiProvider
+    
       colorMode={'light'}
       cache={{ default: defaultCache, utility: utilityCache }}>
       {children}

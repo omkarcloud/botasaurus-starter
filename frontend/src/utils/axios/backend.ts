@@ -1,5 +1,6 @@
-import axios from 'axios'
-import fetchAdapter from './fetch-adapter'
+import axios from 'axios';
+
+import fetchAdapter from './fetch-adapter';
 
 export const backendBaseURL = 'http://127.0.0.1:8000/api'
 

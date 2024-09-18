@@ -1,5 +1,5 @@
-import BackendAxios, { backendBaseURL } from './backend'
-import FrontendAxios, { frontendBaseURL } from './frontend'
+import BackendAxios, { backendBaseURL } from './backend';
+import FrontendAxios, { frontendBaseURL } from './frontend';
 
 const AxiosInstance =
   typeof window === 'undefined' ? BackendAxios : FrontendAxios

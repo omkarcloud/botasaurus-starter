@@ -1,6 +1,7 @@
-import Document, { Head, Html, Main, NextScript } from 'next/document'
-import { ReactElement } from 'react'
-import { Theme, defaultTheme, themeConfig } from '../lib/theme'
+import Document, { Head, Html, Main, NextScript } from 'next/document';
+import { ReactElement } from 'react';
+
+import { defaultTheme, Theme, themeConfig } from '../lib/theme';
 
 function themeLink(theme: Theme): ReactElement {
   let disabledProps = {}

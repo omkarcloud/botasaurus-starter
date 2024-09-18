@@ -1,4 +1,4 @@
-import { EuiCheckbox, useGeneratedHtmlId } from '@elastic/eui'
+import { EuiCheckbox, useGeneratedHtmlId } from '@elastic/eui';
 
 export default function CheckboxField({ value, onChange, ...props }: any) {
   const handleNumberChange = event => {

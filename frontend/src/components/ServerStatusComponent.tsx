@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react'
-import { EuiEmptyPrompt } from '@elastic/eui'
-import Api from '../utils/api'
+import { EuiEmptyPrompt } from '@elastic/eui';
+import { useEffect, useState } from 'react';
+
+import Api from '../utils/api';
 
 
 const minute = 60 * 1000

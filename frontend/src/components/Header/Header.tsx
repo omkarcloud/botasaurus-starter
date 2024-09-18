@@ -1,4 +1,4 @@
-import { EuiLink } from '@elastic/eui'
+import { EuiLink } from '@elastic/eui';
 
 const Header = () => (
   <div>

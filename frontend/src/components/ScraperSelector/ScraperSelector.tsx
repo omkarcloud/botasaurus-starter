@@ -1,5 +1,6 @@
-import { EuiFormRow } from '@elastic/eui'
-import ChooseField from '../inputs/ChooseField'
+import { EuiFormRow } from '@elastic/eui';
+
+import ChooseField from '../inputs/ChooseField';
 
 function ScraperSelector({ scrapers, selectedScraper, onSelectScraper }) {
   const options = scrapers.map(scraper => ({

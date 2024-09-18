@@ -1,4 +1,4 @@
-import { EuiDataGrid, EuiLink } from '@elastic/eui'
+import { EuiDataGrid, EuiLink } from '@elastic/eui';
 
 function createColumns(fields) {
   return fields.map(({ key, label }) => ({

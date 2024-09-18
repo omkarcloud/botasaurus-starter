@@ -1,4 +1,4 @@
-import { EuiAccordion, EuiFlexGroup, EuiFlexItem, EuiTitle } from '@elastic/eui'
+import { EuiAccordion, EuiFlexGroup, EuiFlexItem, EuiTitle } from '@elastic/eui';
 
 const CollapsibleSection= ({
   title,

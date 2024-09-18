@@ -1,4 +1,4 @@
-import Links from '../utils/data/links'
+import Links from '../utils/data/links';
 
 function generateSiteMap() {
   function wrapInPath(ls) {

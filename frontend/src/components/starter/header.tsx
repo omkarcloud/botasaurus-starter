@@ -10,10 +10,11 @@ import {
   EuiListGroupItem,
   EuiTitle,
   useGeneratedHtmlId,
-} from '@elastic/eui'
-import { useState } from 'react'
-import Links from '../../utils/data/links'
-import {Link} from '../Link'
+} from '@elastic/eui';
+import { useState } from 'react';
+
+import Links from '../../utils/data/links';
+import { Link } from '../Link';
 
 
 function Logo() {

@@ -1,10 +1,11 @@
-import { createControls } from 'botasaurus-controls'
-import { useMemo, } from 'react'
-import { useState } from 'react'
-import { EmptyScraper } from '../Empty/Empty'
-import MarkdownComponent from '../MarkdownComponent/MarkdownComponent'
-import ScraperSelector from '../ScraperSelector/ScraperSelector'
-import { hasFilters, hasSorts, hasViews } from '../../utils/models'
+import { createControls } from 'botasaurus-controls';
+import { useMemo } from 'react';
+import { useState } from 'react';
+
+import { hasFilters, hasSorts, hasViews } from '../../utils/models';
+import { EmptyScraper } from '../Empty/Empty';
+import MarkdownComponent from '../MarkdownComponent/MarkdownComponent';
+import ScraperSelector from '../ScraperSelector/ScraperSelector';
 
 function createApiInitializationText(baseUrl) {
   if (baseUrl) {

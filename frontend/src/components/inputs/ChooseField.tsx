@@ -1,5 +1,5 @@
-import { EuiButtonGroup } from '@elastic/eui'
-import React from 'react'
+import { EuiButtonGroup } from '@elastic/eui';
+import React from 'react';
 
 type ChooseOption = {
   value: string

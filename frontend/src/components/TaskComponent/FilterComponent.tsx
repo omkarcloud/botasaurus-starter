@@ -1,11 +1,12 @@
-import { EuiButton, EuiFormRow } from '@elastic/eui'
-import { useCallback, useState } from 'react'
-import CheckboxField from '../inputs/CheckBoxField'
-import MultiSelect from '../inputs/MultiSelect'
-import NumberField from '../inputs/NumberField'
-import SearchField from '../inputs/SearchField'
-import SingleSelect from '../inputs/SingleSelect'
+import { EuiButton, EuiFormRow } from '@elastic/eui';
 import debounce from 'lodash.debounce';
+import { useCallback, useState } from 'react';
+
+import CheckboxField from '../inputs/CheckBoxField';
+import MultiSelect from '../inputs/MultiSelect';
+import NumberField from '../inputs/NumberField';
+import SearchField from '../inputs/SearchField';
+import SingleSelect from '../inputs/SingleSelect';
 
 const NumericInputWithLabel = ({ label, initialValue, onChange }) => {
   const [value, setValue] = useState(initialValue);

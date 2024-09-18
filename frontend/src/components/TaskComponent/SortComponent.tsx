@@ -1,6 +1,7 @@
-import { EuiFormRow } from '@elastic/eui'
-import ChooseField from '../inputs/ChooseField'
-import SingleSelect from '../inputs/SingleSelect'
+import { EuiFormRow } from '@elastic/eui';
+
+import ChooseField from '../inputs/ChooseField';
+import SingleSelect from '../inputs/SingleSelect';
 
 export const SortComponent = ({ sort, setSort, sorts }) => {
   // Convert sorts to the format expected by TabsComponent

@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react'
-import { pushToRoute } from '../../utils/next'
-import Tabs from '../Tabs/Tabs'
-import { useRouter } from '../Link'
+import { useEffect, useState } from 'react';
+
+import { pushToRoute } from '../../utils/next';
+import { useRouter } from '../Link';
+import Tabs from '../Tabs/Tabs';
 
 export const TabsId = {
   INPUT: 'input',

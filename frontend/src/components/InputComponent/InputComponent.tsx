@@ -1,33 +1,26 @@
-import {
-  EuiButton,
-  EuiButtonEmpty,
-  EuiFormRow,
-  EuiIcon,
-  EuiToolTip,
-} from '@elastic/eui'
+import { EuiButton, EuiButtonEmpty, EuiForm, EuiFormRow, EuiIcon, EuiToolTip } from '@elastic/eui';
+import { Control, createControls, WithChooseOptions } from 'botasaurus-controls';
+import { useMemo, useState } from 'react';
 
-import { EuiForm } from '@elastic/eui'
-import Toast from '../../utils/cogo-toast'
-import { Control, WithChooseOptions, createControls } from 'botasaurus-controls'
-import { useMemo, useState } from 'react'
-import Api from '../../utils/api'
-import { isEmptyObject } from '../../utils/missc'
-import { pushToRoute } from '../../utils/next'
-import { EmptyFailedInputJs, EmptyInputs, EmptyScraper } from '../Empty/Empty'
-import ScraperSelector from '../ScraperSelector/ScraperSelector'
-import CheckboxField from '../inputs/CheckBoxField'
-import ChooseField from '../inputs/ChooseField'
-import CollapsibleSection from '../inputs/CollapsibleSection'
-import ListOfTextFields from '../inputs/ListOfTextFields'
-import NumberField from '../inputs/NumberField'
-import SingleSelect from '../inputs/SingleSelect'
-import SwitchField from '../inputs/SwitchField'
-import TextAreaField from '../inputs/TextAreaField'
-import TextField from '../inputs/TextField'
-import ClientOnly from '../ClientOnly'
-import { Container } from '../Wrappers'
-import InputMultiSelect from '../inputs/InputMultiSelect'
-import { useRouter } from '../Link'
+import Api from '../../utils/api';
+import Toast from '../../utils/cogo-toast';
+import { isEmptyObject } from '../../utils/missc';
+import { pushToRoute } from '../../utils/next';
+import ClientOnly from '../ClientOnly';
+import { EmptyFailedInputJs, EmptyInputs, EmptyScraper } from '../Empty/Empty';
+import CheckboxField from '../inputs/CheckBoxField';
+import ChooseField from '../inputs/ChooseField';
+import CollapsibleSection from '../inputs/CollapsibleSection';
+import InputMultiSelect from '../inputs/InputMultiSelect';
+import ListOfTextFields from '../inputs/ListOfTextFields';
+import NumberField from '../inputs/NumberField';
+import SingleSelect from '../inputs/SingleSelect';
+import SwitchField from '../inputs/SwitchField';
+import TextAreaField from '../inputs/TextAreaField';
+import TextField from '../inputs/TextField';
+import { useRouter } from '../Link';
+import ScraperSelector from '../ScraperSelector/ScraperSelector';
+import { Container } from '../Wrappers';
 
 function saveDataToLocalStorage(selectedScraper: any, newData: any) {
   try {

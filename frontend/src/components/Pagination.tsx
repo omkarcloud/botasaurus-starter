@@ -1,5 +1,6 @@
-import { EuiPagination } from '@elastic/eui'
-import SingleSelect from './inputs/SingleSelect'
+import { EuiPagination } from '@elastic/eui';
+
+import SingleSelect from './inputs/SingleSelect';
 
 export function Pagination({ total_pages, activePage, onPageClick }) {
   if (total_pages <= 7) {

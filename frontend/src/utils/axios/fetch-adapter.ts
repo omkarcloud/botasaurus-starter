@@ -2,11 +2,11 @@
 /**
  * Code Taken from @vespaiach/axios-fetch-adapter in order to solve next.js transpilation errors
  */
-import buildFullPath from "axios/lib/core/buildFullPath"
-import createError from "axios/lib/core/createError"
-import settle from "axios/lib/core/settle"
-import buildURL from "axios/lib/helpers/buildURL"
-import { isUndefined } from "axios/lib/utils"
+import buildFullPath from 'axios/lib/core/buildFullPath';
+import createError from 'axios/lib/core/createError';
+import settle from 'axios/lib/core/settle';
+import buildURL from 'axios/lib/helpers/buildURL';
+import { isUndefined } from 'axios/lib/utils';
 
 /**
  * - Create a request object

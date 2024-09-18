@@ -1,29 +1,19 @@
-import { EuiLink } from '@elastic/eui'
-import { useEffect, useRef, useState } from 'react'
-import Api from '../../utils/api'
-import { isEmpty, isEmptyObject } from '../../utils/missc'
-import { TaskStatus, hasFilters, isDoing, hasSorts, hasViews } from '../../utils/models'
-import CenteredSpinner from '../CenteredSpinner'
-import DownloadStickyBar from '../DownloadStickyBar/DownloadStickyBar'
-import {
-  EmptyAborted,
-  EmptyFailed,
-  EmptyFilterResults,
-  EmptyInProgress,
-  EmptyPending,
-  EmptyResults,
-} from '../Empty/Empty'
-import {
-  Container,
-  OutputContainerWithBottomPadding,
-  OutputTabsContainer,
-} from '../Wrappers'
-import DataPanel from './DataPanel'
-import { FilterComponent } from './FilterComponent'
-import { SortComponent } from './SortComponent'
-import { ViewComponent } from './ViewComponent'
-import { Pagination } from '../Pagination'
-import {Link} from '../Link'
+import { EuiLink } from '@elastic/eui';
+import { useEffect, useRef, useState } from 'react';
+
+import Api from '../../utils/api';
+import { isEmpty, isEmptyObject } from '../../utils/missc';
+import { hasFilters, hasSorts, hasViews, isDoing, TaskStatus } from '../../utils/models';
+import CenteredSpinner from '../CenteredSpinner';
+import DownloadStickyBar from '../DownloadStickyBar/DownloadStickyBar';
+import { EmptyAborted, EmptyFailed, EmptyFilterResults, EmptyInProgress, EmptyPending, EmptyResults } from '../Empty/Empty';
+import { Link } from '../Link';
+import { Pagination } from '../Pagination';
+import { Container, OutputContainerWithBottomPadding, OutputTabsContainer } from '../Wrappers';
+import DataPanel from './DataPanel';
+import { FilterComponent } from './FilterComponent';
+import { SortComponent } from './SortComponent';
+import { ViewComponent } from './ViewComponent';
 
 function sentenceCase(string) {
   // Convert a string into Sentence case.

@@ -1,5 +1,6 @@
-import { GetServerSideProps } from 'next/types'
-import Error from 'next/error'
+import Error from 'next/error';
+import { GetServerSideProps } from 'next/types';
+
 function removeDotFromLineEnding(line) {
     return line.replace(/\.$/, '');
   }

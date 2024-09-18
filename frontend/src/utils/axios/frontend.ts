@@ -1,5 +1,6 @@
-import axios from 'axios'
-import applyInterceptors from './apply-interceptors'
+import axios from 'axios';
+
+import applyInterceptors from './apply-interceptors';
 
 function isLocal() {
 

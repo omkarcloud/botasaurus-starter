@@ -1,13 +1,7 @@
-import {
-  EuiButton,
-  EuiCodeBlock,
-  EuiDescriptionListDescription,
-  EuiEmptyPrompt,
-  EuiImage,
-  EuiLink,
-} from '@elastic/eui'
-import CenteredSpinner from '../CenteredSpinner'
-import {Link} from '../Link'
+import { EuiButton, EuiCodeBlock, EuiDescriptionListDescription, EuiEmptyPrompt, EuiImage, EuiLink } from '@elastic/eui';
+
+import CenteredSpinner from '../CenteredSpinner';
+import { Link } from '../Link';
 
 
 function OutputLink() {

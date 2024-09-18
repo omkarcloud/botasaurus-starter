@@ -1,9 +1,4 @@
-import {
-  EuiButton,
-  EuiEmptyPrompt,
-  EuiImage,
-  EuiPageTemplate,
-} from '@elastic/eui'
+import { EuiButton, EuiEmptyPrompt, EuiImage, EuiPageTemplate } from '@elastic/eui';
 
 function NotFoundPage(props) {
   const illustration = '/images/404_rainy_cloud_light.png'

@@ -1,4 +1,4 @@
-import { EuiMarkdownFormat } from '@elastic/eui'
+import { EuiMarkdownFormat } from '@elastic/eui';
 
 const MarkdownComponent = ({ content }) => (
   <EuiMarkdownFormat>{content}</EuiMarkdownFormat>
