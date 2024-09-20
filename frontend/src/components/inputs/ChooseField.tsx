@@ -14,7 +14,7 @@ type ChooseProps = {
   value: string // Currently selected value
   onChange: (value: string) => void // Function to call when the selection changes
   name?: string
-  isRequired: boolean
+  isRequired?: boolean
 }
 
 const ChooseField: React.FC<ChooseProps> = ({

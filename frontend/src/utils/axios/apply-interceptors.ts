@@ -56,7 +56,8 @@ function applyInterceptors(AxiosInstance: AxiosInstance) {
       if (config.silent) {
         return config
       }
-      showLoading(config, config.message ? config.message : 'Submitting')
+      const message = config.message
+      showLoading(config, message ? message : 'Submitting')
 
       return config
     },

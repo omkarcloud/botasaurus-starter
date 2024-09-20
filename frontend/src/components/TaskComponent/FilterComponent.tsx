@@ -131,7 +131,7 @@ export const FilterComponent = ({
                 <NumericInputWithLabel
                   key={id}
                   label={label}
-                  value={filter_data[id]}
+                  initialValue={filter_data[id]}
                   onChange={v => handleFilterChange(id, v)}
                 />
               )
@@ -177,7 +177,7 @@ export const FilterComponent = ({
                 <TextFieldWithLabel
                   key={id}
                   label={label}
-                  value={filter_data[id]}
+                  initialValue={filter_data[id]}
                   onChange={v => handleFilterChange(id, v)}
                 />
               )
