@@ -126,21 +126,21 @@ function useDownloadModal(onDownload) {
   }
 
   const modal = isModalVisible && (
-    <EuiModal className="max-w-xl text-center" onClose={toggleModal}>
-      <ClickOutside
+    <ClickOutside
+    exceptions={['euiModal']} 
         handleClickOutside={() => {
           toggleModal()
-        }}>
-        <div>
+        }}><EuiModal className="max-w-xl text-center" onClose={toggleModal}>
+      
           <EuiModalHeader className="justify-center">
             <EuiModalHeaderTitle>Download Results</EuiModalHeaderTitle>
           </EuiModalHeader>
           <EuiModalBody>
             <DownloadForm onSubmit={successClose} />
           </EuiModalBody>
-        </div>
-      </ClickOutside>
     </EuiModal>
+    </ClickOutside>
+
   )
 
   return { showModal: () => setIsModalVisible(true), modal }

@@ -259,9 +259,10 @@ const TaskTable = ({ activePage, onPageClick, isLoading, total_pages, tasks, upd
   return (
     <>
       {taskToBeDeleted && (
+          <ClickOutside
+          exceptions={['euiModal']} 
+          handleClickOutside={() => { closeModal() }}>
         <EuiModal onClose={closeModal}>
-          <ClickOutside handleClickOutside={() => { closeModal() }}>
-            <div>
 
               <EuiModalHeader>
                 <EuiModalHeaderTitle>Confirm Delete</EuiModalHeaderTitle>
@@ -279,9 +280,9 @@ const TaskTable = ({ activePage, onPageClick, isLoading, total_pages, tasks, upd
                 </EuiButton>
               </EuiModalFooter>
 
-            </div>
-          </ClickOutside>
+
         </EuiModal>
+        </ClickOutside>
       )}
       {isLoading ? (
         <CenteredSpinner />

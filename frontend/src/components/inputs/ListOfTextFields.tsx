@@ -10,11 +10,10 @@ import {
   EuiModalFooter,
   EuiModalHeader,
   EuiModalHeaderTitle,
-} from '@elastic/eui';
-import { useState } from 'react';
-
-import ClickOutside from '../ClickOutside/ClickOutside';
-import TextAreaField from './TextAreaField';
+} from '@elastic/eui'
+import { useState } from 'react'
+import ClickOutside from '../ClickOutside/ClickOutside'
+import TextAreaField from './TextAreaField'
 
 function isEmpty(x: any) {
   return (
@@ -189,9 +188,7 @@ function Modal({ closeModal, id, value, onChangeValue, islinks }) {
     
   })
   
-  return <EuiModal onClose={closeModal}>
-    <ClickOutside handleClickOutside={() => { closeModal() } }>
-      <div style={{ minWidth: 720 }}>
+  return <ClickOutside exceptions={['euiModal']}  handleClickOutside={() => { closeModal() } }> <EuiModal style={{ minWidth: 720 }} onClose={closeModal}>
         <EuiModalHeader>
           <EuiModalHeaderTitle>Paste Items</EuiModalHeaderTitle>
         </EuiModalHeader>
@@ -232,7 +229,6 @@ function Modal({ closeModal, id, value, onChangeValue, islinks }) {
           </EuiButton>
         </EuiModalFooter>
 
-      </div>
-    </ClickOutside>
   </EuiModal>
+    </ClickOutside>
 }
