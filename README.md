@@ -57,6 +57,3 @@ python run.py
 ```
 
 For more information read Botasaurus Documentation at [https://www.omkar.cloud/botasaurus/](https://www.omkar.cloud/botasaurus/) 
----
-
-🙏 Made in Bharat 🇮🇳. Vande Mataram 🙏
