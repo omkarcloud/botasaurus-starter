@@ -9,7 +9,7 @@ function generateSiteMap() {
       Links.home,
       Links.output,
       Links.about,
-      Links.api,
+      Links.apiIntegration,
       Links.notFound,
     ]),
   ]

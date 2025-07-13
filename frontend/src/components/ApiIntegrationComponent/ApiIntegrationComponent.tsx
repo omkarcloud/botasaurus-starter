@@ -254,7 +254,10 @@ results_bytes, filename = api.download_task_results(
     task_id=1,
     format='excel',  # format can be one of: json, csv or excel${hasViews(views) ? create_views_string(views) : ""}${hasSorts(sorts) ? create_sort_string(sorts, default_sort) : ""}${hasFilters(filters) ? create_filter_string(filters) : ""}
 )
+with open(filename, 'wb') as file:
+    file.write(results_bytes)
 \`\`\``
+
   } else {
     return `To download the results of a specific task in a particular format, use the \`download_task_results\` method:
 
@@ -372,7 +375,7 @@ from botasaurus_api import Api
 # Create an instance of the API client
 api = Api()
 
-# Create an asynchronous task
+# Create a synchronous task
 data = ${js_object_to_python_dict_string(default_data)}
 task = api.create_sync_task${create_scraper_task_data_text(scraper_name, hasSingleScraper)}
 

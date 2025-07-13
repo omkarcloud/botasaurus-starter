@@ -2,7 +2,7 @@ const Links = {
   home: '/',
   output: '/output',
   about: '/about',
-  api: '/api',
+  apiIntegration: '/api-integration',
   notFound: '/404',
 }
 export default Links
