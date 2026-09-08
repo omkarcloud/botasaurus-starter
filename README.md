@@ -30,6 +30,7 @@
   <a href="https://gitpod.io/#https://github.com/omkarcloud/botasaurus-starter">
     <img alt="Open in Gitpod" src="https://gitpod.io/button/open-in-gitpod.svg" />
   </a>
+  <a href="https://app.codeanywhere.com/#https://github.com/omkarcloud/botasaurus-starter"><img src="https://codeanywhere.com/img/open-in-codeanywhere-btn.svg" alt="Open in Codeanywhere" /></a>
 </p>
 
 
